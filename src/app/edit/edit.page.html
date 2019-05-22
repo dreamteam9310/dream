@@ -1,0 +1,9 @@
+<ion-content *ngFor = "let item of dataList"color="dark">
+  <form novalidate #myForm="ngForm" (ngSubmit)="edit(myForm.value)">
+  <ion-input type="text" ngModel name="s_name"[(ngModel)]="item.s_name" placeholder="ใส่ข้อมูล"></ion-input>
+
+<ion-input  type="text" ngModel name="s_price" [(ngModel)]="item.s_price"placeholder="ใส่ข้อมูล"></ion-input>
+
+<ion-button type="submit" expand="full">บันทึก</ion-button>
+</form>
+</ion-content>

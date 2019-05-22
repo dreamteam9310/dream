@@ -1,0 +1,23 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title>
+     ข้อมูลสินค้า
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button (click)="adddata()" expand="full"><ion-icon name="add-circle-outline"></ion-icon>เพิ่ม</ion-button>
+   
+  <ion-card *ngFor = "let item of dataList"color="dark"> <!--วนลูปค่าที่จะโชว์-->
+    <ion-card-content>
+      รหัส : {{item.s_id}}
+      <br>
+      ชื่อสินค้า : {{item.s_name}} 
+      <br>
+     ราคา : {{item.s_price}}   
+     <ion-button (click)="deletedata(item.s_id)" expand="full"color="danger"><ion-icon name="logo-css3"></ion-icon>ลบ</ion-button>
+     <ion-button (click)= "edit(item.s_id)" expand="full"color="danger"><ion-icon name="settings"></ion-icon> แก้ไข </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
